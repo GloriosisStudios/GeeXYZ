@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GeeXYZ - Decentralized Social Media</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Include Gun.js via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>GeeXYZ</h1>
+    
+    <!-- Authentication Section -->
+    <div id="auth">
+      <h2>Login / Signup</h2>
+      <form id="signupForm">
+        <input type="text" id="signupAlias" placeholder="Username" required>
+        <input type="password" id="signupPassword" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+      <form id="loginForm">
+        <input type="text" id="loginAlias" placeholder="Username" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    
+    <!-- Logged in user info -->
+    <div id="userInfo" style="display:none;">
+      Logged in as: <span id="currentUser"></span>
+      <button id="logoutBtn">Logout</button>
+    </div>
+    
+    <!-- App Content: visible only when logged in -->
+    <div id="appContent" style="display:none;">
+      <!-- Form for posting a message with an optional image URL -->
+      <form id="postForm">
+        <textarea id="message" placeholder="Share your thoughts..." required></textarea>
+        <input type="url" id="imageUrl" placeholder="Image URL (optional)">
+        <button type="submit">Post</button>
+      </form>
+      
+      <!-- Area to display posts -->
+      <div id="posts"></div>
+    </div>
+    
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
